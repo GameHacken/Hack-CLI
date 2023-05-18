@@ -5,6 +5,7 @@
 #include <Windows.h>
 #include "startup.h"
 #include "menu.h"
+#include "setup.h"
 
 using namespace std;
 
@@ -49,82 +50,6 @@ int healthSteps() {
     cout << "Health steps changed to " << healthSteps << "!" << endl;
     return optionsMenu();
 }
-
-// int mainMenu() { // this will be moved to menu.cpp
-//     cout << "Welcome to the Main Menu!" << endl;
-//     cout << "Please select an option:" << endl;
-//     cout << "1. Start Game" << endl;
-//     cout << "2. Options" << endl;
-//     cout << "3. Exit" << endl;
-//     cout << "Enter a selection: ";
-//     int selection = 0;
-//     cin >> selection;
-//     switch (selection) {
-//         case 1:
-//             cout << "Start injection..." << endl;
-//             Sleep(500);
-//             cout << "Injection Started!" << endl;
-//             break;
-//         case 2:
-//             cout << "Opening Options..." << endl;
-//             Sleep(500);
-//             cout << "Options Opened!" << endl;
-//             optionsMenu();
-//         case 3:
-//             cout << "Exiting Program..." << endl;
-//             Sleep(500);
-//             cout << "Program Exited!" << endl;
-//             break;
-//         default:
-//             cout << "Invalid Selection!" << endl;
-//             Sleep(2000);
-//             break;
-//     }
-//     return 0;
-// }
-
-int FirstSetup() {
-    cout << "Welcome to the First Setup!" << endl;
-    cout << "Select the game you want to mod: " << endl;
-    cout << "1. Assault Cube" << endl;
-    int StartupSelection = 0;
-    cin >> StartupSelection;
-    mainMenu();
-    return 0;
-}
-
-
-// int normalStartup() {
-//     for (int i = 1; i <= 2; ++i) {
-//         cout << "Initializing Program..." << endl;
-//         Sleep(250);
-//         cout << "Initializing Program.." << endl;
-//         Sleep(250);
-//     }
-//     Sleep(500);
-//     cout << endl << "Program Initialized!" << endl << endl;
-//     mainMenu();
-// }
-
-// int silentStartup() {
-//     cout << "Initializing Silent startup..." << endl;
-//     for (int i = 1; i <= 2; ++i) {
-//         cout << "Initializing Program..." << endl;
-//         Sleep(250);
-//         cout << "Initializing Program.." << endl;
-//         Sleep(250);
-//     }
-//     cout << "Program Initialized!" << endl;
-//     mainMenu();
-// }
-
-// int debugStartup() {
-//     cout << "Initializing Debug startup..." << endl;
-//     Sleep(500);
-//     cout << "Program Initialized!" << endl;
-//     mainMenu();
-// }
-
 
 int Exit() {
     cout << "Exiting Program..." << endl;

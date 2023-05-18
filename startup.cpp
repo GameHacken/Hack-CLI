@@ -8,7 +8,7 @@
 
 using namespace std;
 
-//First setup for the program, this will include the basic settings, such as what games do you want to mod and what startup options do you want to use
+// Normal startup for the program, will include basic warnings and errors but wont include any log messages.
 void normalStartup() {
     for (int i = 1; i <= 2; ++i) {
         cout << "Initializing Program..." << endl;
@@ -21,6 +21,7 @@ void normalStartup() {
     mainMenu();
 }
 
+// Silent startup for the program, will include no warnings or errors even if  important may errors occur!
 void silentStartup() {
     cout << "Initializing Silent startup..." << endl;
     for (int i = 1; i <= 2; ++i) {
@@ -33,6 +34,7 @@ void silentStartup() {
     mainMenu();
 }
 
+// Debug startup for the program, will include all warnings errors and log messages.
 void debugStartup() {
     cout << "Initializing Debug startup..." << endl;
     Sleep(500);
