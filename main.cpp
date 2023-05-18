@@ -113,6 +113,13 @@ int mainMenu() {
     return 0;
 }
 
+int Exit() {
+    cout << "Exiting Program..." << endl;
+    Sleep(500);
+    cout << "Program Exited!" << endl;
+    return 0;
+}
+
 int main() {
     if (true) { // if config file doesnt exsist then run first setup
         FirstSetup();
