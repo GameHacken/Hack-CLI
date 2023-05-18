@@ -6,39 +6,7 @@
 
 using namespace std;
 
-
-int FirstSetup() {
-    cout << "Welcome to the First Setup!" << endl;
-    cout << "Please select a startup option: " << endl;
-    int StartupSelection = 0;
-    cin >> StartupSelection;
-}
-
-int startup() {
-    for (int i = 1; i <= 2; ++i) {
-        cout << "Initializing Program..." << endl;
-        Sleep(250);
-        cout << "Initializing Program.." << endl;
-        Sleep(250);
-    }
-    Sleep(500);
-    cout << endl << "Program Initialized!" << endl << endl;
-    return mainMenu();
-}
-
-int silentStartup() {
-    cout << "Initializing Silent startup..." << endl;
-    Sleep(500);
-    cout << "Program Initialized!" << endl;
-    return mainMenu();
-}
-
-int debugStartup() {
-    cout << "Initializing Debug startup..." << endl;
-    Sleep(500);
-    cout << "Program Initialized!" << endl;
-    return mainMenu();
-}
+//First setup for the program, this will include the basic settings, such as what games do you want to mod and what startup options do you want to use
 
 int optionsMenu() {
     cout << "Welcome to the Options Menu!" << endl;
@@ -113,6 +81,48 @@ int mainMenu() {
     return 0;
 }
 
+int FirstSetup() {
+    cout << "Welcome to the First Setup!" << endl;
+    cout << "Select the game you want to mod: " << endl;
+    cout << "1. Assault Cube" << endl;
+    int StartupSelection = 0;
+    cin >> StartupSelection;
+    return mainMenu();
+}
+
+
+int normalStartup() {
+    for (int i = 1; i <= 2; ++i) {
+        cout << "Initializing Program..." << endl;
+        Sleep(250);
+        cout << "Initializing Program.." << endl;
+        Sleep(250);
+    }
+    Sleep(500);
+    cout << endl << "Program Initialized!" << endl << endl;
+    return mainMenu();
+}
+
+int silentStartup() {
+    cout << "Initializing Silent startup..." << endl;
+    for (int i = 1; i <= 2; ++i) {
+        cout << "Initializing Program..." << endl;
+        Sleep(250);
+        cout << "Initializing Program.." << endl;
+        Sleep(250);
+    }
+    cout << "Program Initialized!" << endl;
+    return mainMenu();
+}
+
+int debugStartup() {
+    cout << "Initializing Debug startup..." << endl;
+    Sleep(500);
+    cout << "Program Initialized!" << endl;
+    return mainMenu();
+}
+
+
 int Exit() {
     cout << "Exiting Program..." << endl;
     Sleep(500);
@@ -121,16 +131,24 @@ int Exit() {
 }
 
 int main() {
-    if (true) { // if config file doesnt exsist then run first setup
+    cout << "Welcome to the Game Modder!" << endl;
+    cout << "Please select a startup option: " << endl; // this option will be removed and there will be a config file created with the first setup with what startup option you want to use.
+    cout << "1. Firstsetup" << endl;
+    cout << "2. Normal Startup" << endl;
+    cout << "3. silent Startup" << endl;
+    cout << "4. Debug Startup" << endl;
+    int StartupSelection = 0;
+    cin >> StartupSelection;
+    if (StartupSelection == 1) { // if config file doesnt exsist then run first setup
         FirstSetup();
     }
-    else if (true) { // if config file states normal startup
-        startup();
+    else if (StartupSelection == 2) { // if config file states normal startup
+        normalStartup();
     }
-    else if (true) { // if config file states silent startup
+    else if (StartupSelection == 3) { // if config file states silent startup
         silentStartup();
     }
-    else if (true) { // if config file states debug startup
+    else if (StartupSelection == 4) { // if config file states debug startup
         debugStartup();
     }
     else {
