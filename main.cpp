@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <sstream>
 #include <Windows.h>
+#include <fstream>
 #include "startup.h"
 #include "menu.h"
 #include "setup.h"
@@ -60,6 +61,17 @@ int Exit() {
 
 int main() {
     cout << "Welcome to the Game Modder!" << endl;
+    if (FILE* file = fopen("config.txt", "r")) { // if config file exsists then run normal startup
+        fclose(file);
+        normalStartup();
+    }
+    else {
+        cout << "Config file not found!" << endl;
+        Sleep(2000);
+        cout << "Running first setup!" << endl;
+        Sleep(2000);
+        FirstSetup();
+    }
     cout << "Please select a startup option: " << endl; // this option will be removed and there will be a config file created with the first setup with what startup option you want to use.
     cout << "1. Firstsetup" << endl;
     cout << "2. Normal Startup" << endl;
